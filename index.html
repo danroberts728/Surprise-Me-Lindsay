@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cocktail Finder</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Cocktail Finder</h1>
+    <p class="sub">Pick ingredients to find cocktails that fit. Mobile-first UI.</p>
+  </header>
+
+  <main class="container">
+    <section class="inputs">
+      <div class="input-block">
+        <label for="req-input">Required ingredients</label>
+        <div class="chip-row" id="req-chips"></div>
+        <div class="auto-wrap">
+          <input id="req-input" type="text" autocomplete="off" placeholder="Type to search (must choose from list)" />
+          <ul class="suggest" id="req-suggest" role="listbox" aria-label="Required ingredient suggestions"></ul>
+        </div>
+      </div>
+
+      <div class="input-block">
+        <label for="opt-input">Optional ingredients</label>
+        <div class="chip-row" id="opt-chips"></div>
+        <div class="auto-wrap">
+          <input id="opt-input" type="text" autocomplete="off" placeholder="Type to search (must choose from list)" />
+          <ul class="suggest" id="opt-suggest" role="listbox" aria-label="Optional ingredient suggestions"></ul>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="clear-all" class="btn ghost">Clear</button>
+      </div>
+    </section>
+
+    <section class="results">
+      <h2 class="section-title">Results</h2>
+      <div id="results" class="card-list"></div>
+      <div id="empty" class="empty hidden">
+        <p>No results yet. Add required and/or optional ingredients.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden" aria-hidden="true">
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" id="modal-close" aria-label="Close">×</button>
+
+      <div class="modal__header">
+        <h3 id="modal-title"></h3>
+      </div>
+
+      <div class="modal__tabs" id="modal-tabs"></div>
+
+      <div class="modal__body">
+        <img id="modal-img" alt="" class="modal__img" />
+        <div class="modal__section">
+          <h4>Ingredients</h4>
+          <ul id="modal-ingredients" class="ing-list"></ul>
+        </div>
+        <div class="modal__section">
+          <h4>Instructions</h4>
+          <p id="modal-instructions"></p>
+        </div>
+        <div class="modal__meta">
+          <div id="modal-meta"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal__backdrop" id="modal-backdrop"></div>
+  </div>
+
+  <footer class="foot">
+    <small>Data pack loaded from <code>data/pack.json</code>. Your selections are saved for this session.</small>
+  </footer>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

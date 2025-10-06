@@ -1,0 +1,43 @@
+{
+    "groups": [
+        {
+            "id": "rum",
+            "name": "Rum",
+            "members": [
+                "anejo_rum",
+                "coconut_rum",
+                "light_rum",
+                "151_proof_rum",
+                "aged_rum",
+                "amber_jamaican_rum"
+            ],
+            "aliases": [
+                "rhum"
+            ]
+        },
+        {
+            "id": "tequila",
+            "name": "Tequila",
+            "members": [
+                "100_agave_tequila"
+            ]
+        },
+        {
+            "id": "voda",
+            "name": "Voda",
+            "members": [
+                "absolut_citron",
+                "absolut_kurant",
+                "absolut_peppar",
+                "absolut_vodka"
+            ]
+        },
+        {
+            "id": "brandy",
+            "name": "Brandy",
+            "members": [
+                "apricot_brandy"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,86 @@
+:root{
+  --bg:#0f0f12; --fg:#f5f7fb; --muted:#a9afbe; --chip:#1a1d23; --accent:#4ade80;
+  --danger:#ef4444; --card:#12141a; --line:#232633; --hint:#111318;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif}
+img{max-width:100%;display:block}
+.hidden{display:none !important}
+
+.app-header{padding:16px 16px 8px}
+.app-header h1{margin:0;font-size:22px}
+.app-header .sub{margin:6px 0 0;color:var(--muted);font-size:14px}
+
+.container{padding:8px 16px 90px}
+
+.inputs .input-block{margin:14px 0 18px}
+.input-block label{display:block;font-weight:600;margin:0 0 6px}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0}
+.chip{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:14px;display:flex;gap:8px;align-items:center}
+.chip .x{background:transparent;border:0;color:var(--muted);font-size:16px;line-height:1;cursor:pointer}
+.chip.req{border-color:#4f46e5}
+.chip.opt{border-color:#0891b2}
+
+.auto-wrap{position:relative}
+.auto-wrap input{width:100%;padding:12px 12px;border-radius:10px;border:1px solid var(--line);background:#0c0e13;color:var(--fg);outline:none}
+.suggest{
+  position:absolute;left:0;right:0;top:calc(100% + 4px);
+  background:#0c0e13;border:1px solid var(--line);border-radius:10px;list-style:none;margin:0;padding:6px 0;
+  max-height:240px;overflow:auto;z-index:50
+}
+.suggest li{padding:10px 12px;cursor:pointer}
+.suggest li:hover,.suggest li.active{background:#141823}
+.suggest.empty{padding:6px 12px;color:var(--muted)}
+
+.actions{display:flex;gap:8px;margin-top:6px}
+.btn{padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#161922;color:var(--fg);cursor:pointer}
+.btn.ghost{background:transparent}
+
+.section-title{font-size:18px;margin:16px 0}
+.card-list{display:grid;grid-template-columns:1fr;gap:12px}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  display:flex;gap:12px;align-items:center;padding:10px
+}
+.card img.thumb{width:84px;height:84px;object-fit:cover;border-radius:10px;background:var(--hint)}
+.card .meta{flex:1;min-width:0}
+.card .name{font-weight:700;margin:0 0 2px}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.badge{font-size:12px;border-radius:999px;border:1px solid var(--line);padding:4px 8px;background:#111318;color:var(--muted)}
+.badge.missing{border-color:var(--danger);color:#fecaca;background:#2a1010}
+
+.empty{color:var(--muted);text-align:center;padding:20px}
+
+/* Modal */
+.modal{position:fixed;inset:0;display:grid;place-items:end center}
+.modal__backdrop{position:absolute;inset:0;background:rgba(0,0,0,.6)}
+.modal__dialog{
+  position:relative;background:#0c0f15;border:1px solid var(--line);border-radius:16px 16px 0 0;
+  width:100%;max-height:90vh;overflow:auto;z-index:10;padding:14px 14px 24px
+}
+.modal__close{
+  position:absolute;right:12px;top:10px;border:0;background:#151923;border:1px solid var(--line);
+  color:var(--fg);border-radius:10px;width:32px;height:32px;cursor:pointer
+}
+.modal__header h3{margin:0 32px 8px 0}
+.modal__tabs{display:flex;gap:8px;overflow:auto;padding-bottom:6px;margin-bottom:8px}
+.tab{padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:#0f1320;color:var(--fg);font-size:13px;white-space:nowrap;cursor:pointer}
+.tab.active{background:#1b2338;border-color:#3b82f6}
+.modal__img{width:100%;max-height:220px;object-fit:cover;border-radius:12px;border:1px solid var(--line);background:#0b0d12;margin:6px 0 10px}
+.modal__section h4{margin:12px 0 6px}
+.ing-list{margin:0;padding-left:18px}
+.modal__meta{margin-top:10px;color:var(--muted);font-size:12px}
+.modal__meta a{color:#93c5fd;text-decoration:none}
+.modal__meta a:hover{text-decoration:underline}
+
+/* Desktop-ish tweaks (we don't care much, but make it usable) */
+@media (min-width: 800px){
+  .card-list{grid-template-columns:repeat(2, 1fr)}
+  .modal__dialog{max-width:720px;border-radius:16px}
+}
+.suggest li.group{font-weight:600;border-top:1px solid var(--line)}
+.suggest li.group:first-child{border-top:0}
+.suggest li.member{padding-left:24px;opacity:0.9}
+.suggest li.member::before{
+  content:"•"; display:inline-block; width:14px; margin-left:-18px; text-align:center; opacity:0.6
+}
