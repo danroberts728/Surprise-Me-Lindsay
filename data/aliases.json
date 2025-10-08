@@ -1,0 +1,979 @@
+{
+  "ingredients": {
+    "blackstrap_rum": {
+      "id": "blackstrap_rum",
+      "name": "Blackstrap rum",
+      "responds_to": ["rum"]
+    },
+    "campari": {
+      "id": "campari",
+      "name": "Campari",
+      "responds_to": ["bitter aperitif"]
+    },
+    "pineapple_juice": {
+      "id": "pineapple_juice",
+      "name": "Pineapple juice",
+      "responds_to": ["pineapple", "juice"]
+    },
+    "freshly_squeezed_lime_juice": {
+      "id": "freshly_squeezed_lime_juice",
+      "name": "Freshly Squeezed Lime juice",
+      "responds_to": ["lime", "lime juice", "fresh lime juice", "juice"]
+    },
+    "demerara_sugar_syrup": {
+      "id": "demerara_sugar_syrup",
+      "name": "Demerara sugar syrup",
+      "responds_to": ["demerara syrup", "simple syrup", "syrup"]
+    },
+    "rye_whiskey_or_bourbon": {
+      "id": "rye_whiskey_or_bourbon",
+      "name": "Rye Whiskey or Bourbon",
+      "responds_to": ["rye whiskey", "bourbon", "whiskey"]
+    },
+    "simple_syrup": {
+      "id": "simple_syrup",
+      "name": "Simple syrup",
+      "responds_to": ["syrup"]
+    },
+    "fresh_lemon_juice": {
+      "id": "fresh_lemon_juice",
+      "name": "Fresh lemon juice",
+      "responds_to": ["lemon", "lemon juice", "fresh lemon juice", "juice"]
+    },
+    "egg_white": {
+      "id": "egg_white",
+      "name": "Egg White",
+      "responds_to": ["egg"]
+    },
+    "red_wine_shiraz_or_malbech": {
+      "id": "red_wine_shiraz_or_malbech",
+      "name": "Red wine (Shiraz or Malbech)",
+      "responds_to": ["red wine", "wine"]
+    },
+    "dry_gin": {
+      "id": "dry_gin",
+      "name": "Dry Gin",
+      "responds_to": ["gin"]
+    },
+    "honey_syrup": {
+      "id": "honey_syrup",
+      "name": "Honey Syrup",
+      "responds_to": ["syrup", "honey"]
+    },
+    "fresh_orange_juice": {
+      "id": "fresh_orange_juice",
+      "name": "Fresh Orange Juice",
+      "responds_to": ["orange", "orange juice", "fresh orange juice", "juice"]
+    },
+    "angostura_bitters": {
+      "id": "angostura_bitters",
+      "name": "Angostura Bitters",
+      "responds_to": ["angostura", "bitters"]
+    },
+    "orgeat_syrup": {
+      "id": "orgeat_syrup",
+      "name": "Orgeat Syrup",
+      "responds_to": ["orgeat", "almond syrup", "syrup"]
+    },
+    "rye_whiskey": {
+      "id": "rye_whiskey",
+      "name": "Rye Whiskey",
+      "responds_to": ["whiskey"]
+    },
+    "gin": {
+      "id": "gin",
+      "name": "Gin",
+      "responds_to": []
+    },
+    "apricot_brandy": {
+      "id": "apricot_brandy",
+      "name": "Apricot Brandy",
+      "responds_to": ["apricot liqueur", "brandy"]
+    },
+    "calvados": {
+      "id": "calvados",
+      "name": "Calvados",
+      "responds_to": ["apple brandy", "brandy"]
+    },
+    "creme_de_cacao_white": {
+      "id": "creme_de_cacao_white",
+      "name": "Creme de Cacao (White)",
+      "responds_to": ["creme de cacao", "chocolate liqueur"]
+    },
+    "creme_de_menthe_green": {
+      "id": "creme_de_menthe_green",
+      "name": "Creme de Menthe (Green)",
+      "responds_to": ["creme de menthe", "mint liqueur"]
+    },
+    "fresh_cream": {
+      "id": "fresh_cream",
+      "name": "Fresh Cream",
+      "responds_to": ["cream"]
+    },
+    "cognac": {
+      "id": "cognac",
+      "name": "Cognac",
+      "responds_to": ["brandy"]
+    },
+    "creme_de_cacao_brown": {
+      "id": "creme_de_cacao_brown",
+      "name": "Creme de Cacao (Brown)",
+      "responds_to": ["creme de cacao", "chocolate liqueur"]
+    },
+    "tequila_100_agave": {
+      "id": "tequila_100_agave",
+      "name": "Tequila 100% Agave",
+      "responds_to": ["tequila", "tequila 100% agave"]
+    },
+    "triple_sec": {
+      "id": "triple_sec",
+      "name": "Triple Sec",
+      "responds_to": ["orange liqueur"]
+    },
+    "of_soda_water": {
+      "id": "of_soda_water",
+      "name": "of Soda Water",
+      "responds_to": ["soda water"]
+    },
+    "dry_vermouth": {
+      "id": "dry_vermouth",
+      "name": "Dry Vermouth",
+      "responds_to": ["vermouth"]
+    },
+    "bitter_campari": {
+      "id": "bitter_campari",
+      "name": "Bitter Campari",
+      "responds_to": ["campari", "bitter aperitif"]
+    },
+    "vodka": {
+      "id": "vodka",
+      "name": "Vodka",
+      "responds_to": []
+    },
+    "tomato_juice": {
+      "id": "tomato_juice",
+      "name": "Tomato Juice",
+      "responds_to": ["tomato", "juice"]
+    },
+    "worcestershire_sauce": {
+      "id": "worcestershire_sauce",
+      "name": "Worcestershire Sauce",
+      "responds_to": []
+    },
+    "tabasco_celery_salt_pepper_up_to_taste": {
+      "id": "tabasco_celery_salt_pepper_up_to_taste",
+      "name": "Tabasco, Celery Salt, Pepper (Up to taste)",
+      "responds_to": ["tabasco", "celery salt", "pepper"]
+    },
+    "bourbon_or_rye_whiskey": {
+      "id": "bourbon_or_rye_whiskey",
+      "name": "Bourbon or Rye Whiskey",
+      "responds_to": ["bourbon", "rye whiskey", "whiskey"]
+    },
+    "sweet_red_vermouth": {
+      "id": "sweet_red_vermouth",
+      "name": "Sweet Red Vermouth",
+      "responds_to": ["sweet vermouth", "red vermouth", "vermouth"]
+    },
+    "ginger_ale": {
+      "id": "ginger_ale",
+      "name": "Ginger Ale",
+      "responds_to": []
+    },
+    "of_angostura_bitters_optional": {
+      "id": "of_angostura_bitters_optional",
+      "name": "of Angostura Bitters (optional)",
+      "responds_to": ["angostura", "bitters"]
+    },
+    "pisco": {
+      "id": "pisco",
+      "name": "Pisco",
+      "responds_to": ["brandy"]
+    },
+    "fresh_pineapple_juice": {
+      "id": "fresh_pineapple_juice",
+      "name": "Fresh Pineapple Juice",
+      "responds_to": ["pineapple", "pineapple juice", "fresh pineapple juice", "juice"]
+    },
+    "dry_white_wine": {
+      "id": "dry_white_wine",
+      "name": "Dry White Wine",
+      "responds_to": ["white wine", "wine"]
+    },
+    "cloves": {
+      "id": "cloves",
+      "name": "Cloves",
+      "responds_to": ["spice"]
+    },
+    "sugar_syrup": {
+      "id": "sugar_syrup",
+      "name": "Sugar Syrup",
+      "responds_to": ["simple syrup", "syrup"]
+    },
+    "champagne": {
+      "id": "champagne",
+      "name": "Champagne",
+      "responds_to": ["sparkling wine"]
+    },
+    "kahlua": {
+      "id": "kahlua",
+      "name": "Kahlúa",
+      "responds_to": ["coffee liqueur"]
+    },
+    "strong_espresso": {
+      "id": "strong_espresso",
+      "name": "strong Espresso",
+      "responds_to": ["espresso", "coffee"]
+    },
+    "freshly_squeezed_orange_juice": {
+      "id": "freshly_squeezed_orange_juice",
+      "name": "Freshly Squeezed Orange Juice",
+      "responds_to": ["orange", "orange juice", "fresh orange juice", "juice"]
+    },
+    "prosecco": {
+      "id": "prosecco",
+      "name": "Prosecco",
+      "responds_to": ["sparkling wine"]
+    },
+    "grand_marnier": {
+      "id": "grand_marnier",
+      "name": "Grand Marnier",
+      "responds_to": ["orange liqueur"]
+    },
+    "fresh_lime_juice": {
+      "id": "fresh_lime_juice",
+      "name": "Fresh Lime Juice",
+      "responds_to": ["lime", "lime juice", "fresh lime juice", "juice"]
+    },
+    "brandy": {
+      "id": "brandy",
+      "name": "Brandy",
+      "responds_to": []
+    },
+    "maraschino_luxardo": {
+      "id": "maraschino_luxardo",
+      "name": "Maraschino Luxardo",
+      "responds_to": ["maraschino liqueur"]
+    },
+    "curacao": {
+      "id": "curacao",
+      "name": "Curacao",
+      "responds_to": ["orange liqueur"]
+    },
+    "aromatic_bitters": {
+      "id": "aromatic_bitters",
+      "name": "Aromatic Bitters",
+      "responds_to": ["bitters"]
+    },
+    "lillet_blanc": {
+      "id": "lillet_blanc",
+      "name": "Lillet Blanc",
+      "responds_to": ["lillet", "aperitif"]
+    },
+    "rhum_martinique_agricole": {
+      "id": "rhum_martinique_agricole",
+      "name": "Rhum Martinique Agricole",
+      "responds_to": ["agricole rum", "martinique rum", "rhum", "rum"]
+    },
+    "blended_aged_rum": {
+      "id": "blended_aged_rum",
+      "name": "Blended Aged Rum",
+      "responds_to": ["aged rum", "rum"]
+    },
+    "falernum": {
+      "id": "falernum",
+      "name": "Falernum",
+      "responds_to": []
+    },
+    "vanilla_vodka": {
+      "id": "vanilla_vodka",
+      "name": "Vanilla Vodka",
+      "responds_to": ["vodka"]
+    },
+    "passion_fruit_liqueur": {
+      "id": "passion_fruit_liqueur",
+      "name": "Passion Fruit Liqueur",
+      "responds_to": []
+    },
+    "passion_fruit_puree": {
+      "id": "passion_fruit_puree",
+      "name": "Passion Fruit Puree",
+      "responds_to": ["passion fruit"]
+    },
+    "vanilla_sugar": {
+      "id": "vanilla_sugar",
+      "name": "Vanilla Sugar",
+      "responds_to": ["sugar"]
+    },
+    "champagne_to_serve_on_the_side": {
+      "id": "champagne_to_serve_on_the_side",
+      "name": "Champagne to serve on the side",
+      "responds_to": ["champagne", "sparkling wine"]
+    },
+    "white_rum": {
+      "id": "white_rum",
+      "name": "White rum",
+      "responds_to": ["rum"]
+    },
+    "peach_brandy": {
+      "id": "peach_brandy",
+      "name": "Peach Brandy",
+      "responds_to": ["brandy"]
+    },
+    "honey_mix": {
+      "id": "honey_mix",
+      "name": "Honey Mix",
+      "responds_to": ["honey syrup", "syrup", "honey"]
+    },
+    "mint_leaves": {
+      "id": "mint_leaves",
+      "name": "Mint Leaves",
+      "responds_to": ["mint"]
+    },
+    "pineapple_chunks": {
+      "id": "pineapple_chunks",
+      "name": "Pineapple Chunks",
+      "responds_to": ["pineapple"]
+    },
+    "cola": {
+      "id": "cola",
+      "name": "Cola",
+      "responds_to": []
+    },
+    "sweet_vermouth": {
+      "id": "sweet_vermouth",
+      "name": "Sweet Vermouth",
+      "responds_to": ["vermouth"]
+    },
+    "benedictine": {
+      "id": "benedictine",
+      "name": "Benedictine",
+      "responds_to": []
+    },
+    "peychauds_bitters": {
+      "id": "peychauds_bitters",
+      "name": "Peychaud’s Bitters",
+      "responds_to": ["peychaud’s", "peychauds", "bitters"]
+    },
+    "100_agave_tequila": {
+      "id": "100_agave_tequila",
+      "name": "100% Agave Tequila",
+      "responds_to": ["tequila", "tequila 100% agave"]
+    },
+    "fresh_lime": {
+      "id": "fresh_lime",
+      "name": "Fresh lime",
+      "responds_to": ["lime"]
+    },
+    "pinch_of_salt": {
+      "id": "pinch_of_salt",
+      "name": "pinch of Salt",
+      "responds_to": ["salt"]
+    },
+    "pink_grapefruit_soda": {
+      "id": "pink_grapefruit_soda",
+      "name": "Pink Grapefruit Soda",
+      "responds_to": ["grapefruit soda", "soda"]
+    },
+    "rum": {
+      "id": "rum",
+      "name": "Rum",
+      "responds_to": []
+    },
+    "grapefruit_juice": {
+      "id": "grapefruit_juice",
+      "name": "Grapefruit Juice",
+      "responds_to": ["grapefruit", "juice"]
+    },
+    "white_peach_puree": {
+      "id": "white_peach_puree",
+      "name": "White Peach Puree",
+      "responds_to": ["peach"]
+    },
+    "jamaican_dark_rum": {
+      "id": "jamaican_dark_rum",
+      "name": "Jamaican dark rum",
+      "responds_to": ["jamaican rum", "dark rum", "rum"]
+    },
+    "gold_puerto_rican_rum": {
+      "id": "gold_puerto_rican_rum",
+      "name": "Gold Puerto Rican rum",
+      "responds_to": ["gold rum", "puerto rican rum", "rum"]
+    },
+    "demerara_rum": {
+      "id": "demerara_rum",
+      "name": "Demerara Rum",
+      "responds_to": ["rum"]
+    },
+    "donns_mix": {
+      "id": "donns_mix",
+      "name": "Donn’s Mix*",
+      "responds_to": []
+    },
+    "grenadine_syrup": {
+      "id": "grenadine_syrup",
+      "name": "Grenadine syrup",
+      "responds_to": ["grenadine", "syrup"]
+    },
+    "pernod": {
+      "id": "pernod",
+      "name": "Pernod",
+      "responds_to": ["pastis", "anise liqueur"]
+    },
+    "raspberry_liqueur": {
+      "id": "raspberry_liqueur",
+      "name": "Raspberry Liqueur",
+      "responds_to": []
+    },
+    "peach_schnapps": {
+      "id": "peach_schnapps",
+      "name": "Peach Schnapps",
+      "responds_to": ["peach liqueur"]
+    },
+    "cranberry_juice": {
+      "id": "cranberry_juice",
+      "name": "Cranberry Juice",
+      "responds_to": ["cranberry", "juice"]
+    },
+    "london_dry_gin": {
+      "id": "london_dry_gin",
+      "name": "London Dry Gin",
+      "responds_to": ["gin"]
+    },
+    "orange_bitters": {
+      "id": "orange_bitters",
+      "name": "Orange Bitters",
+      "responds_to": ["bitters"]
+    },
+    "old_tom_gin": {
+      "id": "old_tom_gin",
+      "name": "Old Tom Gin",
+      "responds_to": ["gin"]
+    },
+    "of_absinthe": {
+      "id": "of_absinthe",
+      "name": "of Absinthe",
+      "responds_to": ["absinthe"]
+    },
+    "absinthe": {
+      "id": "absinthe",
+      "name": "Absinthe",
+      "responds_to": ["anise liqueur"]
+    },
+    "sugar_cube": {
+      "id": "sugar_cube",
+      "name": "Sugar Cube",
+      "responds_to": ["sugar"]
+    },
+    "plain_water": {
+      "id": "plain_water",
+      "name": "Plain Water",
+      "responds_to": ["water"]
+    },
+    "creme_de_cassis": {
+      "id": "creme_de_cassis",
+      "name": "Crème de Cassis",
+      "responds_to": ["creme de cassis", "cassis", "blackcurrant liqueur"]
+    },
+    "fernet": {
+      "id": "fernet",
+      "name": "Fernet",
+      "responds_to": ["amaro"]
+    },
+    "tequila": {
+      "id": "tequila",
+      "name": "Tequila",
+      "responds_to": []
+    },
+    "espadin_mezcal": {
+      "id": "espadin_mezcal",
+      "name": "Espadin Mezcal",
+      "responds_to": ["mezcal", "espadin"]
+    },
+    "jamaica_overproof_white_rum": {
+      "id": "jamaica_overproof_white_rum",
+      "name": "Jamaica Overproof White Rum",
+      "responds_to": ["overproof rum", "jamaican rum", "white rum", "rum"]
+    },
+    "egg_white_optional": {
+      "id": "egg_white_optional",
+      "name": "Egg White (Optional)",
+      "responds_to": ["egg"]
+    },
+    "fernet_branca": {
+      "id": "fernet_branca",
+      "name": "Fernet Branca",
+      "responds_to": ["amaro"]
+    },
+    "fill_up_with_cola": {
+      "id": "fill_up_with_cola",
+      "name": "Fill up with Cola",
+      "responds_to": ["cola"]
+    },
+    "creme_de_mure": {
+      "id": "creme_de_mure",
+      "name": "Creme de Mûre",
+      "responds_to": ["creme de mûre", "blackberry liqueur"]
+    },
+    "chilled_champagne": {
+      "id": "chilled_champagne",
+      "name": "Chilled Champagne",
+      "responds_to": ["champagne", "sparkling wine"]
+    },
+    "grand_marnier_optional": {
+      "id": "grand_marnier_optional",
+      "name": "Grand Marnier (optional)",
+      "responds_to": ["orange liqueur"]
+    },
+    "creme_de_violette": {
+      "id": "creme_de_violette",
+      "name": "Creme de Violette",
+      "responds_to": ["violet liqueur"]
+    },
+    "amber_jamaican_rum": {
+      "id": "amber_jamaican_rum",
+      "name": "Amber Jamaican Rum",
+      "responds_to": ["jamaican rum", "amber rum", "rum"]
+    },
+    "martinique_molasses_rhum": {
+      "id": "martinique_molasses_rhum",
+      "name": "Martinique Molasses Rhum*",
+      "responds_to": ["martinique rum", "rhum", "rum"]
+    },
+    "orange_curacao": {
+      "id": "orange_curacao",
+      "name": "Orange Curacao",
+      "responds_to": ["curacao", "orange liqueur"]
+    },
+    "orgeat_syrup_almond": {
+      "id": "orgeat_syrup_almond",
+      "name": "Orgeat Syrup (Almond)",
+      "responds_to": ["orgeat", "almond syrup", "syrup"]
+    },
+    "fresh_squeezed_lime_juice": {
+      "id": "fresh_squeezed_lime_juice",
+      "name": "Fresh Squeezed Lime Juice",
+      "responds_to": ["lime", "lime juice", "fresh lime juice", "juice"]
+    },
+    "coconut_cream": {
+      "id": "coconut_cream",
+      "name": "Coconut Cream",
+      "responds_to": ["coconut"]
+    },
+    "cognac_or_brandy": {
+      "id": "cognac_or_brandy",
+      "name": "Cognac or Brandy",
+      "responds_to": ["cognac", "brandy"]
+    },
+    "top_up_ginger_beer": {
+      "id": "top_up_ginger_beer",
+      "name": "Top up Ginger beer",
+      "responds_to": ["ginger beer"]
+    },
+    "ron_profundo_havana_club": {
+      "id": "ron_profundo_havana_club",
+      "name": "Ron Profundo Havana Club",
+      "responds_to": ["rum"]
+    },
+    "ron_smoky_havana_club": {
+      "id": "ron_smoky_havana_club",
+      "name": "Ron Smoky Havana Club",
+      "responds_to": ["rum"]
+    },
+    "licor_amaretto": {
+      "id": "licor_amaretto",
+      "name": "Licor Amaretto",
+      "responds_to": ["amaretto"]
+    },
+    "licor_frangelico": {
+      "id": "licor_frangelico",
+      "name": "Licor Frangelico",
+      "responds_to": ["frangelico", "hazelnut liqueur"]
+    },
+    "pc_gengibre_slice": {
+      "id": "pc_gengibre_slice",
+      "name": "pc Gengibre Slice",
+      "responds_to": ["ginger"]
+    },
+    "amaretto": {
+      "id": "amaretto",
+      "name": "Amaretto",
+      "responds_to": ["almond liqueur"]
+    },
+    "blended_scotch_whisky": {
+      "id": "blended_scotch_whisky",
+      "name": "Blended scotch whisky",
+      "responds_to": ["scotch", "scotch whisky", "whisky"]
+    },
+    "lagavulin_16y": {
+      "id": "lagavulin_16y",
+      "name": "Lagavulin 16y",
+      "responds_to": ["lagavulin", "scotch", "scotch whisky", "whisky"]
+    },
+    "quarter_size_sliced_fresh_ginger": {
+      "id": "quarter_size_sliced_fresh_ginger",
+      "name": "quarter size sliced fresh ginger",
+      "responds_to": ["ginger"]
+    },
+    "coffee_liqueur": {
+      "id": "coffee_liqueur",
+      "name": "Coffee Liqueur",
+      "responds_to": ["kahlua"]
+    },
+    "white_creme_de_menthe": {
+      "id": "white_creme_de_menthe",
+      "name": "White Creme de Menthe",
+      "responds_to": ["creme de menthe", "mint liqueur"]
+    },
+    "fresh_squeezed_lemon_juice": {
+      "id": "fresh_squeezed_lemon_juice",
+      "name": "Fresh Squeezed Lemon Juice",
+      "responds_to": ["lemon", "lemon juice", "fresh lemon juice", "juice"]
+    },
+    "raw_whole_egg_white": {
+      "id": "raw_whole_egg_white",
+      "name": "Raw whole Egg White",
+      "responds_to": ["egg"]
+    },
+    "smirnoff_vodka": {
+      "id": "smirnoff_vodka",
+      "name": "Smirnoff Vodka",
+      "responds_to": ["vodka", "smirnoff"]
+    },
+    "ginger_beer": {
+      "id": "ginger_beer",
+      "name": "Ginger Beer",
+      "responds_to": []
+    },
+    "cherry_brandy_luxardo": {
+      "id": "cherry_brandy_luxardo",
+      "name": "Cherry Brandy Luxardo",
+      "responds_to": ["cherry brandy", "brandy"]
+    },
+    "gold_jamaican_rum": {
+      "id": "gold_jamaican_rum",
+      "name": "Gold Jamaican Rum",
+      "responds_to": ["jamaican rum", "gold rum", "rum"]
+    },
+    "cuban_rum": {
+      "id": "cuban_rum",
+      "name": "Cuban Rum",
+      "responds_to": ["rum"]
+    },
+    "passion_fruit_syrup": {
+      "id": "passion_fruit_syrup",
+      "name": "Passion Fruit Syrup",
+      "responds_to": ["syrup"]
+    },
+    "raspberry_syrup": {
+      "id": "raspberry_syrup",
+      "name": "Raspberry Syrup",
+      "responds_to": ["syrup"]
+    },
+    "aged_rum": {
+      "id": "aged_rum",
+      "name": "Aged Rum",
+      "responds_to": ["rum"]
+    },
+    "brut_champagne_or_prosecco": {
+      "id": "brut_champagne_or_prosecco",
+      "name": "Brut Champagne or Prosecco",
+      "responds_to": ["champagne", "prosecco", "sparkling wine"]
+    },
+    "soda_water": {
+      "id": "soda_water",
+      "name": "Soda Water",
+      "responds_to": []
+    },
+    "top_up_with_sparkling_wine": {
+      "id": "top_up_with_sparkling_wine",
+      "name": "Top up with Sparkling Wine",
+      "responds_to": ["sparkling wine"]
+    },
+    "goslings_rum": {
+      "id": "goslings_rum",
+      "name": "Goslings Rum",
+      "responds_to": ["goslings", "rum"]
+    },
+    "red_tawny_port_wine": {
+      "id": "red_tawny_port_wine",
+      "name": "Red Tawny Port Wine",
+      "responds_to": ["port", "tawny port", "wine"]
+    },
+    "egg_yolk": {
+      "id": "egg_yolk",
+      "name": "Egg Yolk",
+      "responds_to": ["egg"]
+    },
+    "green_chartreuse": {
+      "id": "green_chartreuse",
+      "name": "Green Chartreuse",
+      "responds_to": ["chartreuse", "herbal liqueur"]
+    },
+    "cuban_aguardiente": {
+      "id": "cuban_aguardiente",
+      "name": "Cuban Aguardiente",
+      "responds_to": ["aguardiente"]
+    },
+    "raw_honey": {
+      "id": "raw_honey",
+      "name": "Raw Honey",
+      "responds_to": ["honey"]
+    },
+    "water": {
+      "id": "water",
+      "name": "Water",
+      "responds_to": []
+    },
+    "vodka_citron": {
+      "id": "vodka_citron",
+      "name": "Vodka Citron",
+      "responds_to": ["citron vodka", "lemon vodka", "vodka"]
+    },
+    "cointreau": {
+      "id": "cointreau",
+      "name": "Cointreau",
+      "responds_to": ["triple sec", "orange liqueur"]
+    },
+    "mezcal": {
+      "id": "mezcal",
+      "name": "Mezcal",
+      "responds_to": []
+    },
+    "yellow_chartreuse": {
+      "id": "yellow_chartreuse",
+      "name": "Yellow Chartreuse",
+      "responds_to": ["chartreuse", "herbal liqueur"]
+    },
+    "aperol": {
+      "id": "aperol",
+      "name": "Aperol",
+      "responds_to": ["bitter aperitif"]
+    },
+    "irish_whiskey": {
+      "id": "irish_whiskey",
+      "name": "Irish Whiskey",
+      "responds_to": ["whiskey"]
+    },
+    "hot_coffee": {
+      "id": "hot_coffee",
+      "name": "Hot coffee",
+      "responds_to": ["coffee"]
+    },
+    "fresh_cream_chilled": {
+      "id": "fresh_cream_chilled",
+      "name": "Fresh cream (Chilled)",
+      "responds_to": ["cream"]
+    },
+    "sugar": {
+      "id": "sugar",
+      "name": "Sugar",
+      "responds_to": []
+    },
+    "white_cuban_ron": {
+      "id": "white_cuban_ron",
+      "name": "White Cuban Ron",
+      "responds_to": ["white rum", "rum"]
+    },
+    "mint_sprigs": {
+      "id": "mint_sprigs",
+      "name": "Mint Sprigs",
+      "responds_to": ["mint"]
+    },
+    "white_cane_sugar": {
+      "id": "white_cane_sugar",
+      "name": "White Cane Sugar",
+      "responds_to": ["sugar", "white sugar"]
+    },
+    "cherry_sangue_morlacco": {
+      "id": "cherry_sangue_morlacco",
+      "name": "Cherry Sangue Morlacco",
+      "responds_to": ["cherry liqueur"]
+    },
+    "dom_benedictine": {
+      "id": "dom_benedictine",
+      "name": "DOM Benedictine",
+      "responds_to": ["benedictine"]
+    },
+    "of_angostura_bitters": {
+      "id": "of_angostura_bitters",
+      "name": "of Angostura Bitters",
+      "responds_to": ["angostura", "bitters"]
+    },
+    "superfine_sugar": {
+      "id": "superfine_sugar",
+      "name": "Superfine Sugar",
+      "responds_to": ["sugar"]
+    },
+    "white_smooth_grappa": {
+      "id": "white_smooth_grappa",
+      "name": "White Smooth Grappa",
+      "responds_to": ["grappa"]
+    },
+    "honey_mix_replace_water_with_chamomile": {
+      "id": "honey_mix_replace_water_with_chamomile",
+      "name": "Honey mix (replace water with chamomile)*",
+      "responds_to": ["honey syrup", "syrup", "honey", "chamomile"]
+    },
+    "chamomile_cordial": {
+      "id": "chamomile_cordial",
+      "name": "Chamomile cordial",
+      "responds_to": ["chamomile", "cordial"]
+    },
+    "scotch_whisky": {
+      "id": "scotch_whisky",
+      "name": "Scotch Whisky",
+      "responds_to": ["scotch", "scotch whisky", "whisky"]
+    },
+    "drambuie": {
+      "id": "drambuie",
+      "name": "Drambuie",
+      "responds_to": []
+    },
+    "bourbon": {
+      "id": "bourbon",
+      "name": "Bourbon",
+      "responds_to": ["whiskey"]
+    },
+    "freshly_squeezed_lemon_juice": {
+      "id": "freshly_squeezed_lemon_juice",
+      "name": "Freshly Squeezed Lemon Juice",
+      "responds_to": ["lemon", "lemon juice", "fresh lemon juice", "juice"]
+    },
+    "italian_basil_leaves": {
+      "id": "italian_basil_leaves",
+      "name": "Italian Basil leaves",
+      "responds_to": ["basil"]
+    },
+    "cachaca": {
+      "id": "cachaca",
+      "name": "Cachaça",
+      "responds_to": ["cachaça", "cachaca"]
+    },
+    "lime_cut_into_small_wedges": {
+      "id": "lime_cut_into_small_wedges",
+      "name": "Lime cut into small wedges",
+      "responds_to": ["lime"]
+    },
+    "cream": {
+      "id": "cream",
+      "name": "Cream",
+      "responds_to": []
+    },
+    "orange_flower_water": {
+      "id": "orange_flower_water",
+      "name": "Orange Flower Water",
+      "responds_to": ["flower water"]
+    },
+    "vanilla_extract": {
+      "id": "vanilla_extract",
+      "name": "Vanilla Extract",
+      "responds_to": ["vanilla"]
+    },
+    "lemon_juice": {
+      "id": "lemon_juice",
+      "name": "Lemon juice",
+      "responds_to": ["lemon", "juice"]
+    },
+    "top_with_cola": {
+      "id": "top_with_cola",
+      "name": "Top with Cola",
+      "responds_to": ["cola"]
+    },
+    "vodka_vanilla": {
+      "id": "vodka_vanilla",
+      "name": "Vodka Vanilla",
+      "responds_to": ["vanilla vodka", "vodka"]
+    },
+    "elderflower_cordial": {
+      "id": "elderflower_cordial",
+      "name": "Elderflower Cordial",
+      "responds_to": ["elderflower", "cordial"]
+    },
+    "monin_honey_syrup": {
+      "id": "monin_honey_syrup",
+      "name": "Monin Honey Syrup",
+      "responds_to": ["honey syrup", "syrup", "monin"]
+    },
+    "thin_slices_red_chili_pepper": {
+      "id": "thin_slices_red_chili_pepper",
+      "name": "thin Slices Red Chili Pepper",
+      "responds_to": ["red chili pepper", "chili", "chilli", "pepper"]
+    },
+    "agave_nectar": {
+      "id": "agave_nectar",
+      "name": "Agave Nectar",
+      "responds_to": ["agave syrup", "syrup"]
+    },
+    "sweet_vermouth_cinzano_rosso": {
+      "id": "sweet_vermouth_cinzano_rosso",
+      "name": "Sweet Vermouth Cinzano Rosso",
+      "responds_to": ["sweet vermouth", "cinzano rosso", "vermouth"]
+    },
+    "cynar": {
+      "id": "cynar",
+      "name": "Cynar",
+      "responds_to": ["amaro"]
+    },
+    "angostura_optional": {
+      "id": "angostura_optional",
+      "name": "Angostura (Optional)",
+      "responds_to": ["angostura", "bitters"]
+    },
+    "amontillado_sherry": {
+      "id": "amontillado_sherry",
+      "name": "Amontillado sherry",
+      "responds_to": ["amontillado", "sherry"]
+    },
+    "palo_cortado": {
+      "id": "palo_cortado",
+      "name": "Palo Cortado",
+      "responds_to": ["sherry"]
+    },
+    "superfine_sugar_or_granulated": {
+      "id": "superfine_sugar_or_granulated",
+      "name": "Superfine Sugar (or granulated)",
+      "responds_to": ["sugar", "superfine sugar", "granulated sugar"]
+    },
+    "orange_wheel": {
+      "id": "orange_wheel",
+      "name": "Orange Wheel",
+      "responds_to": ["orange"]
+    },
+    "lemon_wheel": {
+      "id": "lemon_wheel",
+      "name": "Lemon Wheel",
+      "responds_to": ["lemon"]
+    },
+    "fresh_mint_sprigs": {
+      "id": "fresh_mint_sprigs",
+      "name": "fresh Mint sprigs",
+      "responds_to": ["mint"]
+    },
+    "powdered_sugar": {
+      "id": "powdered_sugar",
+      "name": "Powdered Sugar",
+      "responds_to": ["confectioners sugar", "sugar"]
+    },
+    "amaro_nonino": {
+      "id": "amaro_nonino",
+      "name": "Amaro Nonino",
+      "responds_to": ["amaro"]
+    },
+    "jamaican_rum": {
+      "id": "jamaican_rum",
+      "name": "Jamaican Rum",
+      "responds_to": ["rum"]
+    },
+    "lime_juice": {
+      "id": "lime_juice",
+      "name": "Lime Juice",
+      "responds_to": ["lime", "juice"]
+    },
+    "sugar_cane_juice": {
+      "id": "sugar_cane_juice",
+      "name": "Sugar Cane Juice",
+      "responds_to": ["cane juice", "juice"]
+    }
+  }
+}

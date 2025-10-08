@@ -2,6 +2,7 @@
 
 // ---- Config ----
 const PACK_URL = './data/pack.json';
+const ALIASES_URL = './data/aliases.json';
 
 // ---- Shorthands ----
 const $ = (sel, el = document) => el.querySelector(sel);
@@ -13,6 +14,12 @@ let VERSIONS = {};    // version_id -> recipe version
 let COCKTAILS = [];   // array of cocktails
 let ING_LIST = [];    // [{id, name}]
 let ING_MAP = {};     // id -> name
+
+
+// Alias data
+let ALIASES = {};         // id -> { id, name, responds_to: [] }
+let TERM_TO_IDS = {};     // lower-term -> Set<ingredientId>
+let NAME_LOWER = {};      // id -> lowercased name for quick lookups
 
 // ---- State (persisted to sessionStorage) ----
 const SKEY_REQ = 'requiredIngredient';
@@ -47,6 +54,96 @@ function saveState() {
   sessionStorage.setItem(SKEY_EXC, JSON.stringify([...excSelected]));
   sessionStorage.setItem(SKEY_Q, nameQuery);
 }
+function buildAliasIndex(aliasesJson) {
+  // Store full alias object by id
+  ALIASES = {};
+  TERM_TO_IDS = {}; // reset
+
+  const entries = aliasesJson?.ingredients || {};
+  for (const [id, obj] of Object.entries(entries)) {
+    const name = obj?.name || ING_MAP[id] || prettify(id);
+    const responds = Array.isArray(obj?.responds_to) ? obj.responds_to : [];
+    ALIASES[id] = { id, name, responds_to: responds };
+
+    // build term -> set(ids)
+    responds.forEach(term => {
+      const t = String(term || '').toLowerCase().trim();
+      if (!t) return;
+      if (!TERM_TO_IDS[t]) TERM_TO_IDS[t] = new Set();
+      TERM_TO_IDS[t].add(id);
+    });
+  }
+
+  // NAME_LOWER: id -> lower name (from PACK first, fall back to alias file or prettify)
+  NAME_LOWER = {};
+  for (const { id, name } of ING_LIST) {
+    NAME_LOWER[id] = (name || '').toLowerCase();
+  }
+  // include alias-only names in case some IDs are only present in alias file
+  for (const id of Object.keys(ALIASES)) {
+    if (!NAME_LOWER[id]) NAME_LOWER[id] = (ALIASES[id].name || prettify(id)).toLowerCase();
+  }
+}
+
+function displayNameFor(id) {
+  return ING_MAP[id] || (ALIASES[id] && ALIASES[id].name) || prettify(id);
+}
+
+function respondsTo(ingredientId) {
+  let response = [];
+  if (ALIASES[ingredientId]) {
+    response.push(ALIASES[ingredientId]["name"]);
+    response = response.concat(ALIASES[ingredientId]["responds_to"]);
+  }
+  return response.map(x => x
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, '')
+    .trim());
+}
+
+// For a selected ingredient ID, return a Set of IDs that "respond to" that ingredient's lower-case name
+function respondersFor(ingredientId) {
+  const label = NAME_LOWER[ingredientId] || (ING_MAP[ingredientId] || prettify(ingredientId)).toLowerCase();
+  return new Set(TERM_TO_IDS[label] ? [...TERM_TO_IDS[label]] : []);
+}
+
+// Checks if recipe has the required ingredient either directly or via responders
+function recipeSatisfiesRequired(recipeIngIds, requiredId) {
+  if (recipeIngIds.includes(requiredId)) return true;
+  const responders = respondersFor(requiredId);
+  for (const rid of responders) if (recipeIngIds.includes(rid)) return true;
+  return false;
+}
+
+// Checks if recipe is excluded by an excluded ingredient directly or via responders
+function recipeViolatedByExcluded(recipeIngIds, excludedId) {
+  if (recipeIngIds.includes(excludedId)) return true;
+  const responders = respondersFor(excludedId);
+  for (const rid of responders) if (recipeIngIds.includes(rid)) return true;
+  return false;
+}
+
+// Optional scoring split into two tiers:
+//  - direct hits (contains the optional ingredient ID itself)
+//  - alias hits (contains an ingredient that responds_to the optional ingredient's name)
+function optionalTierScores(recipeIngIds, optionalIds) {
+  let direct = 0;
+  let alias = 0;
+  const ingSet = new Set(recipeIngIds);
+
+  for (const oid of optionalIds) {
+    if (ingSet.has(oid)) {
+      direct += 1;
+      continue;
+    }
+    const responders = respondersFor(oid);
+    for (const rid of responders) {
+      if (ingSet.has(rid)) { alias += 1; break; }
+    }
+  }
+  return { direct, alias };
+}
 
 // ---- Loaders ----
 async function loadAll() {
@@ -75,6 +172,20 @@ async function loadAll() {
 
   ING_LIST = base.sort((a, b) => a.name.localeCompare(b.name));
   ING_MAP = Object.fromEntries(ING_LIST.map(x => [x.id, x.name]));
+
+  // Load aliases and build index
+  try {
+    const ares = await fetch(ALIASES_URL, { cache: 'no-store' });
+    if (ares.ok) {
+      const aliasesJson = await ares.json();
+      buildAliasIndex(aliasesJson);
+    } else {
+      // Even if aliases fail to load, the app should still work in "exact match only" mode.
+      buildAliasIndex({ ingredients: {} });
+    }
+  } catch (e) {
+    buildAliasIndex({ ingredients: {} });
+  }
 }
 
 // ---- Chip rows ----
@@ -137,7 +248,7 @@ function setupAutocomplete(prefix, targetSet) {
     items.forEach((it, idx) => {
       const li = document.createElement('li');
       li.className = 'member';
-      li.textContent = it.name;
+      li.textContent = it.label; // <-- show ingredient name OR "term — Ingredient"
       if (idx === activeIdx) li.classList.add('active');
       li.addEventListener('click', () => select(it.id));
       list.appendChild(li);
@@ -158,10 +269,61 @@ function setupAutocomplete(prefix, targetSet) {
     clearList();
   }
 
+  // Rank: prefix matches first, then shorter terms, then alphabetical label
+  function compareSuggestions(a, b, q) {
+    const startsA = a.term.startsWith(q) ? 0 : 1;
+    const startsB = b.term.startsWith(q) ? 0 : 1;
+    if (startsA !== startsB) return startsA - startsB;
+
+    if (a.term.length !== b.term.length) return a.term.length - b.term.length;
+
+    return a.label.localeCompare(b.label);
+  }
+
   input.addEventListener('input', e => {
     const q = norm(e.target.value);
     if (!q) { list.classList.add('hidden'); clearList(); return; }
-    items = ING_LIST.filter(x => norm(x.name).includes(q)).slice(0, 60);
+
+    // Build combined suggestions from ingredient names + responds_to terms
+    // De-dup by (label,id) so we don't spam repeats
+    const seen = new Set();
+    const out = [];
+
+    function pushSuggestion(obj) {
+      const key = `${obj.label}::${obj.id}`;
+      if (seen.has(key)) return;
+      seen.add(key);
+      out.push(obj);
+    }
+
+    // 1) Ingredient-name suggestions
+    for (const { id, name } of ING_LIST) {
+      const term = norm(name);
+      if (term.includes(q)) {
+        pushSuggestion({
+          id,
+          label: name,
+          term // normalized term for sorting
+        });
+      }
+    }
+
+    // 2) responds_to term suggestions (one entry per (term,id) so user can pick the target)
+    // TERM_TO_IDS: lower-case term -> Set<ingredientId>
+    for (const [rawTerm, idSet] of Object.entries(TERM_TO_IDS)) {
+      const tnorm = norm(rawTerm); // already lower, but normalize just in case
+      if (!tnorm.includes(q)) continue;
+      for (const id of idSet) {
+        // Visible label shows the term and which ingredient you'd add
+        const label = `${rawTerm} — ${displayNameFor(id)}`;
+        pushSuggestion({ id, label, term: tnorm });
+      }
+    }
+
+    // Sort per rules: prefix > shorter > alphabetical
+    out.sort((a, b) => compareSuggestions(a, b, q));
+
+    items = out.slice(0, 60);
     activeIdx = Math.min(activeIdx, items.length - 1);
     showSuggestions();
   });
@@ -169,9 +331,9 @@ function setupAutocomplete(prefix, targetSet) {
   input.addEventListener('keydown', e => {
     if (list.classList.contains('hidden')) return;
     if (e.key === 'ArrowDown') { e.preventDefault(); activeIdx = Math.min(activeIdx + 1, items.length - 1); showSuggestions(); }
-    if (e.key === 'ArrowUp') { e.preventDefault(); activeIdx = Math.max(activeIdx - 1, 0); showSuggestions(); }
-    if (e.key === 'Enter') { e.preventDefault(); if (activeIdx >= 0) select(items[activeIdx].id); }
-    if (e.key === 'Escape') { list.classList.add('hidden'); clearList(); }
+    if (e.key === 'ArrowUp')   { e.preventDefault(); activeIdx = Math.max(activeIdx - 1, 0); showSuggestions(); }
+    if (e.key === 'Enter')     { e.preventDefault(); if (activeIdx >= 0) select(items[activeIdx].id); }
+    if (e.key === 'Escape')    { list.classList.add('hidden'); clearList(); }
   });
 
   document.addEventListener('click', (e) => {
@@ -179,25 +341,35 @@ function setupAutocomplete(prefix, targetSet) {
   });
 }
 
-// ---- Matching (exact IDs only) ----
-function requiredPasses(recipeIngIds, requiredIds) {
-  for (const rid of requiredIds) if (!recipeIngIds.includes(rid)) return false;
+// ---- Matching with alias logic ----
+function requiredPassesWithAliases(recipeIngIds, requiredIds) {
+  for (const rid of requiredIds) {
+    if (!recipeSatisfiesRequired(recipeIngIds, rid)) return false;
+  }
   return true;
 }
-function excludedFails(recipeIngIds, excludedIds) {
-  for (const x of excludedIds) if (recipeIngIds.includes(x)) return true;
+function excludedFailsWithAliases(recipeIngIds, excludedIds) {
+  for (const x of excludedIds) {
+    if (recipeViolatedByExcluded(recipeIngIds, x)) return true;
+  }
   return false;
-}
-function optionalScore(recipeIngIds, optionalIds) {
-  let hits = 0;
-  for (const oid of optionalIds) if (recipeIngIds.includes(oid)) hits++;
-  return hits;
 }
 
 // ---- Results ----
 function clearResults() {
   const grid = $('#results');
   while (grid.firstChild) grid.removeChild(grid.firstChild);
+}
+function ensureCountNode() {
+  let counter = $('#result-count');
+  if (!counter) {
+    counter = document.createElement('div');
+    counter.id = 'result-count';
+    counter.className = 'result-count muted';
+    const gridWrap = $('#results-wrap') || $('#results').parentElement || document.body;
+    gridWrap.insertBefore(counter, gridWrap.firstChild);
+  }
+  return counter;
 }
 function renderResults() {
   const grid = $('#results');
@@ -219,12 +391,27 @@ function renderResults() {
     if (!primary) continue;
 
     const ingIds = (primary.ingredients || []).map(i => i.id);
-    if (!requiredPasses(ingIds, req)) continue;
-    if (excludedFails(ingIds, exc)) continue;
 
-    const optPts = optionalScore(ingIds, opt);
+    // Required (exact OR alias)
+    if (!requiredPassesWithAliases(ingIds, req)) continue;
+
+    // Excluded (exact OR alias)
+    if (excludedFailsWithAliases(ingIds, exc)) continue;
+
+    // Optional priority tiers
+    const { direct, alias } = optionalTierScores(ingIds, opt);
+
+    // Compute "missing" for display against exact selected only (unchanged UX)
     const missing = (primary.ingredients || [])
       .filter(i => !selectedExact.has(i.id))
+      .filter(i => {
+        const target = i.id;
+        for (const sid of req) {
+          const terms = respondersFor(sid); // always an array
+          if (terms.has(target)) return false; // covered → not missing
+        }
+        return true; // keep as missing
+      })
       .map(x => x.id);
 
     items.push({
@@ -232,11 +419,15 @@ function renderResults() {
       name: c.name,
       image: c.image || primary.image || '',
       versionId: c.primary_version_id,
-      optScore: optPts,
+      optDirect: direct,
+      optAlias: alias,
       missing,
-      missCount: missing.length
     });
   }
+
+  // Counter
+  const counterNode = ensureCountNode();
+  counterNode.textContent = `${items.length} cocktails out of ${COCKTAILS.length}`;
 
   if (!items.length) {
     empty.classList.remove('hidden');
@@ -244,7 +435,12 @@ function renderResults() {
   }
   empty.classList.add('hidden');
 
-  items.sort((a, b) => b.optScore - a.optScore || a.missCount - b.missCount || a.name.localeCompare(b.name));
+  // Sort: (1) direct optional hits desc, (2) alias optional hits desc, (3) name asc
+  items.sort((a, b) =>
+    b.optDirect - a.optDirect ||
+    b.optAlias - a.optAlias ||
+    a.name.localeCompare(b.name)
+  );
 
   // Build cards using DOM nodes only
   items.forEach(it => {
@@ -266,15 +462,10 @@ function renderResults() {
     const badges = document.createElement('div');
     badges.className = 'badges';
 
-    const b1 = document.createElement('span');
-    b1.className = 'badge';
-    b1.textContent = `Optional hits: ${it.optScore}`;
-
     const b2 = document.createElement('span');
     b2.className = 'badge missing';
     b2.textContent = `Missing: ${it.missing.map(id => ING_MAP[id] || id).join(', ') || '—'}`;
 
-    badges.appendChild(b1);
     badges.appendChild(b2);
 
     meta.appendChild(h3);
