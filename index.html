@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cocktail Finder</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
+
 <body>
   <header class="app-header">
     <h1>Cocktail Finder</h1>
@@ -15,11 +17,26 @@
   <main class="container">
     <section class="inputs">
       <div class="input-block">
+        <label for="name-search">Search by name</label>
+        <div class="auto-wrap">
+          <input id="name-search" type="text" autocomplete="off" placeholder="Type part of a cocktail name…" />
+        </div>
+      </div>
+      <div class="input-block">
         <label for="req-input">Required ingredients</label>
         <div class="chip-row" id="req-chips"></div>
         <div class="auto-wrap">
           <input id="req-input" type="text" autocomplete="off" placeholder="Type to search (must choose from list)" />
           <ul class="suggest" id="req-suggest" role="listbox" aria-label="Required ingredient suggestions"></ul>
+        </div>
+      </div>
+
+      <div class="input-block">
+        <label for="exc-input">Exclude ingredients</label>
+        <div class="chip-row" id="exc-chips"></div>
+        <div class="auto-wrap">
+          <input id="exc-input" type="text" autocomplete="off" placeholder="Type to search (must choose from list)" />
+          <ul class="suggest" id="exc-suggest" role="listbox" aria-label="Exclude ingredient suggestions"></ul>
         </div>
       </div>
 
@@ -67,7 +84,12 @@
           <h4>Instructions</h4>
           <p id="modal-instructions"></p>
         </div>
+        <div id="modal-garnish-section" class="modal__section">
+          <h4>Garnish</h4>
+          <p id="modal-garnish"></p>
+        </div>
         <div class="modal__meta">
+          <h5>Attribution</h5>
           <div id="modal-meta"></div>
         </div>
       </div>
@@ -81,4 +103,5 @@
 
   <script type="module" src="./src/app.js"></script>
 </body>
+
 </html>
