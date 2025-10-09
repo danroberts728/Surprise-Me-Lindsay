@@ -73,7 +73,6 @@ function buildAliasIndex(aliasesJson) {
       TERM_TO_IDS[t].add(id);
     });
   }
-
   // NAME_LOWER: id -> lower name (from PACK first, fall back to alias file or prettify)
   NAME_LOWER = {};
   for (const { id, name } of ING_LIST) {
@@ -85,7 +84,18 @@ function buildAliasIndex(aliasesJson) {
   }
 }
 
+function isTermId(id) {
+    return typeof id === 'string' && id.startsWith('__term__:');
+  }
+  function termFromId(id) {
+    return isTermId(id) ? id.slice('__term__:'.length) : null; // already lowercased
+  }
+
 function displayNameFor(id) {
+  if(isTermId(id)) {
+    const t = termFromId(id);
+    return t ? t.replace(/\b\w/g, c => c.toUpperCase()) : id;
+  }
   return ING_MAP[id] || (ALIASES[id] && ALIASES[id].name) || prettify(id);
 }
 
@@ -104,7 +114,12 @@ function respondsTo(ingredientId) {
 
 // For a selected ingredient ID, return a Set of IDs that "respond to" that ingredient's lower-case name
 function respondersFor(ingredientId) {
-  const label = NAME_LOWER[ingredientId] || (ING_MAP[ingredientId] || prettify(ingredientId)).toLowerCase();
+  if(isTermId(ingredientId)) {
+    const term = termFromId(ingredientId);
+    return new Set( TERM_TO_IDS[term] ? [...TERM_TO_IDS[term]] : [] );
+  }
+  const label = NAME_LOWER[ingredientId] || 
+              (ING_MAP[ingredientId] || prettify(ingredientId)).toLowerCase();
   return new Set(TERM_TO_IDS[label] ? [...TERM_TO_IDS[label]] : []);
 }
 
@@ -203,7 +218,7 @@ function renderChips() {
       const chip = document.createElement('div');
       chip.className = `chip ${kind}`;
       const span = document.createElement('span');
-      span.textContent = ING_MAP[id] || id;
+      span.textContent = displayNameFor(id);
       const btn = document.createElement('button');
       btn.className = 'x';
       btn.setAttribute('aria-label', 'Remove');
@@ -271,6 +286,10 @@ function setupAutocomplete(prefix, targetSet) {
 
   // Rank: prefix matches first, then shorter terms, then alphabetical label
   function compareSuggestions(a, b, q) {
+    const ak = a.kind == 'term' ? 0 : 1;
+    const bk = b.kind == 'term' ? 0 : 1;
+    if (ak !== bk) return ak - bk;
+
     const startsA = a.term.startsWith(q) ? 0 : 1;
     const startsB = b.term.startsWith(q) ? 0 : 1;
     if (startsA !== startsB) return startsA - startsB;
@@ -310,14 +329,16 @@ function setupAutocomplete(prefix, targetSet) {
 
     // 2) responds_to term suggestions (one entry per (term,id) so user can pick the target)
     // TERM_TO_IDS: lower-case term -> Set<ingredientId>
-    for (const [rawTerm, idSet] of Object.entries(TERM_TO_IDS)) {
-      const tnorm = norm(rawTerm); // already lower, but normalize just in case
-      if (!tnorm.includes(q)) continue;
-      for (const id of idSet) {
-        // Visible label shows the term and which ingredient you'd add
-        const label = `${rawTerm} — ${displayNameFor(id)}`;
-        pushSuggestion({ id, label, term: tnorm });
-      }
+    for (const rawTerm of Object.keys(TERM_TO_IDS)) {
+      const tnorm = norm(rawTerm);
+      if(!tnorm.includes(q)) continue;
+      const vid = `__term__:${tnorm}`;
+      pushSuggestion({
+        id: vid,
+        label: rawTerm,
+        term: tnorm,
+        kind: 'term'
+      });
     }
 
     // Sort per rules: prefix > shorter > alphabetical
@@ -331,9 +352,9 @@ function setupAutocomplete(prefix, targetSet) {
   input.addEventListener('keydown', e => {
     if (list.classList.contains('hidden')) return;
     if (e.key === 'ArrowDown') { e.preventDefault(); activeIdx = Math.min(activeIdx + 1, items.length - 1); showSuggestions(); }
-    if (e.key === 'ArrowUp')   { e.preventDefault(); activeIdx = Math.max(activeIdx - 1, 0); showSuggestions(); }
-    if (e.key === 'Enter')     { e.preventDefault(); if (activeIdx >= 0) select(items[activeIdx].id); }
-    if (e.key === 'Escape')    { list.classList.add('hidden'); clearList(); }
+    if (e.key === 'ArrowUp') { e.preventDefault(); activeIdx = Math.max(activeIdx - 1, 0); showSuggestions(); }
+    if (e.key === 'Enter') { e.preventDefault(); if (activeIdx >= 0) select(items[activeIdx].id); }
+    if (e.key === 'Escape') { list.classList.add('hidden'); clearList(); }
   });
 
   document.addEventListener('click', (e) => {
