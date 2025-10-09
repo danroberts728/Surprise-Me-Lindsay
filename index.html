@@ -4,14 +4,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cocktail Finder</title>
+  <title>Surprise Me, Lindsay</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
   <header class="app-header">
-    <h1>Cocktail Finder</h1>
-    <p class="sub">Pick ingredients to find cocktails that fit. Mobile-first UI.</p>
+    <h1>Surprise Me, Lindsay</h1>
+    <p class="sub">Pick ingredients to find cocktails that fit.</p>
   </header>
 
   <main class="container">
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="input-block">
-        <label for="req-input">Required ingredients</label>
+        <label for="req-input">Filter by required ingredients</label>
         <div class="chip-row" id="req-chips"></div>
         <div class="auto-wrap">
           <input id="req-input" type="text" autocomplete="off" placeholder="Type to search (must choose from list)" />
@@ -58,7 +58,7 @@
       <h2 class="section-title">Results</h2>
       <div id="results" class="card-list"></div>
       <div id="empty" class="empty hidden">
-        <p>No results yet. Add required and/or optional ingredients.</p>
+        <p>No results. Try adjusting the ingredients.</p>
       </div>
     </section>
   </main>
@@ -98,7 +98,7 @@
   </div>
 
   <footer class="foot">
-    <small>Data pack loaded from <code>data/pack.json</code>. Your selections are saved for this session.</small>
+    <small>Copyright &copy; 2025 Dan Roberts</small>
   </footer>
 
   <script type="module" src="./src/app.js"></script>
