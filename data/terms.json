@@ -1,0 +1,1085 @@
+{
+    "terms": [
+        {
+            "id": "whiskey",
+            "label": "Whiskey",
+            "includes": [
+                "bourbon",
+                "rye_whiskey",
+                "irish_whiskey",
+                "scotch",
+                "japanese_whisky",
+                "(^|_)whisk(e?)y($|_)",
+                "(^|_)bourbon($|_)",
+                "jack_daniels",
+                "jim_beam",
+                "southern_comfort",
+                "crown_royal",
+                "drambuie"
+            ]
+        },
+        {
+            "id": "rye_whiskey",
+            "label": "Rye Whiskey",
+            "includes": [
+                "rye_whiskey"
+            ]
+        },
+        {
+            "id": "amaro",
+            "label": "Amaro",
+            "includes": [
+                "(^|_)amaro($|_)",
+                "(^|_aperol($|_)",
+                "(^|_fernet($|_)",
+                "(^|_cynar($|_)"
+            ]
+        },
+        {
+            "id": "aperol",
+            "label": "Aperol",
+            "includes": [
+                "aperol"
+            ]
+        },
+        {
+            "id": "whiskey_liqueur",
+            "label": "Whiskey Liqueur",
+            "includes": [
+                "whiskey_liqueur",
+                "southern_comfort",
+                "yukon_jack",
+                "irish_cream",
+                "drambuie"
+            ]
+        },
+        {
+            "id": "bourbon",
+            "label": "Bourbon",
+            "includes": [
+                "(^|_)bourbon($|_)",
+                "wild_turkey"
+            ]
+        },
+        {
+            "id": "scotch",
+            "label": "Scotch",
+            "includes": [
+                "(^|_)scotch($|_)",
+                "(^|_)johnnie_walker($|_)",
+                "(^|_)lagavulin($|_)"
+            ]
+        },
+        {
+            "id": "vodka",
+            "label": "Vodka",
+            "includes": [
+                "(^|_)vodka($|_)",
+                "(^|_)absolut($|_)"
+            ]
+        },
+        {
+            "id": "mezcal",
+            "label": "Mezcal",
+            "includes": [
+                "(^|_)mezcal($|_)"
+            ]
+        },
+        {
+            "id": "rum",
+            "label": "Rum",
+            "includes": [
+                "(^|_)rum($|_)",
+                "(^|_)rhum($|_)",
+                "white_cuban_ron",
+                "(^|_)havana_club($|_)",
+                "cuban_aguardiente"
+            ]
+        },
+        {
+            "id": "gin",
+            "label": "Gin",
+            "includes": [
+                "(^|_)gin($|_)"
+            ]
+        },
+        {
+            "id": "brandy",
+            "label": "Brandy",
+            "includes": [
+                "(^|_)brandy($|_)",
+                "(^|_)cognac($|_)",
+                "calvados",
+                "kirschwasser",
+                "pisco"
+            ]
+        },
+        {
+            "id": "cognac",
+            "label": "Cognac",
+            "includes": [
+                "(^|_)cognac($|_)"
+            ]
+        },
+        {
+            "id": "benedictine",
+            "label": "Benedictine",
+            "includes": [
+                "benedictine",
+                "dom_benedictine"
+            ]
+        },
+        {
+            "id": "sugar",
+            "label": "Sugar",
+            "includes": [
+                "(^|_)sugar($|_)",
+                "simple_syrup",
+                "donns_mix"
+            ]
+        },
+        {
+            "id": "orange_liqueur",
+            "label": "Triple Sec",
+            "includes": [
+                "(^|_)triple_sec($|_)",
+                "(^|_)orange_curacao($|_)",
+                "(^|_)curacao($|_)",
+                "(^|_)cointreau($|_)",
+                "(^|_)grand_marnier($|_)"
+            ]
+        },
+        {
+            "id": "blue_curacao",
+            "label": "Blue Curacao",
+            "includes": [
+                "(^|_)blue_curacao($|_)"
+            ]
+        },
+        {
+            "id": "green_chartreuse",
+            "label": "Green Chartreuse",
+            "includes": [
+                "green_chartreuse"
+            ]
+        },
+        {
+            "id": "yellow_chartreuse",
+            "label": "Yellow Chartreuse",
+            "includes": [
+                "yellow_chartreuse"
+            ]
+        },
+        {
+            "id": "sweet_vermouth",
+            "label": "Sweet Vermouth",
+            "includes": [
+                "(^|_)sweet_vermouth($|_)",
+                "(^|_)sweet_red_vermouth($|_)",
+                "(^|_)vermouth($|_)"
+            ]
+        },
+        {
+            "id": "allspice",
+            "label": "Allspice",
+            "includes": [
+                "allspice"
+            ]
+        },
+        {
+            "id": "lime",
+            "label": "Lime",
+            "includes": [
+                "(^|_)lime($|_)",
+                "limeade"
+            ]
+        },
+        {
+            "id": "pineapple",
+            "label": "Pineapple",
+            "includes": [
+                "(^|_)pineapple($|_)"
+            ]
+        },
+        {
+            "id": "sparkling_wine",
+            "label": "Sparkling Wine",
+            "includes": [
+                "(^|_)champagne($|_)",
+                "(^|_)sparkling_wine($|_)"
+            ]
+        },
+        {
+            "id": "maraschino_liqueur",
+            "label": "Maraschino Liqueur",
+            "includes": [
+                "maraschino_liqueur"
+            ]
+        },
+        {
+            "id": "orange",
+            "label": "Orange",
+            "includes": [
+                "(^|_)orange($|_)"
+            ]
+        },
+        {
+            "id": "lemon",
+            "label": "Lemon",
+            "includes": [
+                "(^|_)lemon_juice($|_)",
+                "(^|_)lemon($|_)",
+                "(^|_)lemonade($|_)"
+            ]
+        },
+        {
+            "id": "sour_mix",
+            "label": "Sour Mix",
+            "includes": [
+                "sour_mix"
+            ]
+        },
+        {
+            "id": "sweet_and_sour_mix",
+            "label": "Sweet & Sour Mix",
+            "includes": [
+                "sweet_and_sour($|_mix)"
+            ]
+        },
+        {
+            "id": "lemon_lime_soda",
+            "label": "Lemon Lime Soda",
+            "includes": [
+                "lemon_lime_soda",
+                "7_up",
+                "sprite",
+                "surge"
+            ]
+        },
+        {
+            "id": "grapefruit_soda",
+            "label": "Grapefruit Soda",
+            "includes": [
+                "(^|_)grapefruit_soda($|_)"
+            ]
+        },
+        {
+            "id": "water",
+            "label": "Water",
+            "includes": [
+                "(^|_)water($|_)",
+                "(^|_)ice($|_)"
+            ]
+        },
+        {
+            "id": "bitters",
+            "label": "Bitters",
+            "includes": [
+                "(^|_)orange_bitters($|_)",
+                "(^|_)angostura($|_)",
+                "(^|_)bitters($|_)"
+            ]
+        },
+        {
+            "id": "raspberry_liqueur",
+            "label": "Raspberry Liqueur",
+            "includes": [
+                "(^|_)raspberry_liqueur($|_)"
+            ]
+        },
+        {
+            "id": "peach_schnapps",
+            "label": "Peach Schnapps",
+            "includes": [
+                "(^|_)peach_schnapps($|_)",
+                "peachtree_schnapps"
+            ]
+        },
+        {
+            "id": "strawberry_liqueur",
+            "label": "Strawberry Schnapps",
+            "includes": [
+                "(^|_)strawberry_schnapps($|_)",
+                "(^|_)strawberry_liqueur($|_)"
+            ]
+        },
+        {
+            "id": "blueberry_schnapps",
+            "label": "Blueberry Schnapps",
+            "includes": [
+                "(^|_)blueberry_schnapps($|_)"
+            ]
+        },
+        {
+            "id": "peach",
+            "label": "Peach",
+            "includes": [
+                "(^|_)peach($|_)"
+            ]
+        },
+        {
+            "id": "cranberry",
+            "label": "Cranberry",
+            "includes": [
+                "(^|_)cranberry($|_)",
+                "(^|_)cranberries($|_)"
+            ]
+        },
+        {
+            "id": "chocolate_liqueur",
+            "label": "Chocolate Liqueur",
+            "includes": [
+                "(^|_)chocolate_liqueur($|_)",
+                "(^|_)creme_de_cacao($|_)",
+                "baileys_irish_cream",
+                "irish_cream"
+            ]
+        },
+        {
+            "id": "amaretto",
+            "label": "Amaretto",
+            "includes": [
+                "(^|_)amaretto($|_)"
+            ]
+        },
+        {
+            "id": "cream",
+            "label": "Cream",
+            "includes": [
+                "(^|_)cream($|_)",
+                "half_and_half",
+                "irish_cream"
+            ]
+        },
+        {
+            "id": "whipped_cream",
+            "label": "Whipped Cream",
+            "includes": [
+                "(^|_)whipped_cream($|_)"
+            ]
+        },
+        {
+            "id": "banana_liqueur",
+            "label": "Banana Liqueur",
+            "includes": [
+                "(^|_)banana_liqueur($|_)",
+                "creme_de_banane",
+                "pisang_ambon"
+            ]
+        },
+        {
+            "id": "dry_vermouth",
+            "label": "Dry Vermouth",
+            "includes": [
+                "(^|_)dry_vermouth($|_)",
+                "vermouth"
+            ]
+        },
+        {
+            "id": "fortified_wine",
+            "label": "Fortified Wine",
+            "includes": [
+                "(^|_)fortified_wine($|_)",
+                "(^|_)port($|_)"
+            ]
+        },
+        {
+            "id": "white_wine",
+            "label": "White Wine",
+            "includes": [
+                "(^|_)prosecco($|_)",
+                "(^|_)lillet_blanc($|_)",
+                "(^|_)lillet($|_)"
+            ]
+        },
+        {
+            "id": "red_wine",
+            "label": "Red Wine",
+            "includes": [
+                "(^|_)red_wine($|_)",
+                "sherry",
+                "palo_cortado",
+                "malbech",
+                "(^|_)dubonnet_rouge($|_)"
+            ]
+        },
+        {
+            "id": "wine",
+            "label": "Wine",
+            "includes": [
+                "(^|_)wine($|_)",
+                "(^|_)dubonnet($|_)",
+                "(^|_)sherry($|_)",
+                "(^|_)malbech($|_)",
+                "(^|_)prosecco($|_)",
+                "(^|_)lillet_blanc($|_)",
+                "(^|_)lillet($|_)"
+            ]
+        },
+        {
+            "id": "port",
+            "label": "Port",
+            "includes": [
+                "port"
+            ]
+        },
+        {
+            "id": "egg",
+            "label": "Egg",
+            "includes": [
+                "(^|_)egg($|_)"
+            ]
+        },
+        {
+            "id": "blackcurrant_liqueur",
+            "label": "Blackcurrant Liqueur",
+            "includes": [
+                "(^|_)blackcurrant_liqueur($|_)",
+                "creme_de_cassis"
+            ]
+        },
+        {
+            "id": "grenadine",
+            "label": "Grenadine",
+            "includes": [
+                "grenadine",
+                "grenadine_syrup",
+                "cherry_grenadine"
+            ]
+        },
+        {
+            "id": "tequila",
+            "label": "Tequila",
+            "includes": [
+                "(^|_)tequila($|_)"
+            ]
+        },
+        {
+            "id": "fruit_punch",
+            "label": "Fruit Punch",
+            "includes": [
+                "fruit_punch"
+            ]
+        },
+        {
+            "id": "blackberry",
+            "label": "Blackberry",
+            "includes": [
+                "(^|_)blackberries($|_)"
+            ]
+        },
+        {
+            "id": "mint",
+            "label": "Mint",
+            "includes": [
+                "(^|_)mint($|_)"
+            ]
+        },
+        {
+            "id": "jagermeister",
+            "label": "Jagermeister",
+            "includes": [
+                "(^|_)jagermeister($|_)"
+            ]
+        },
+        {
+            "id": "anise_liqueur",
+            "label": "Anise Liqueur",
+            "includes": [
+                "(^|_)absinthe($|_)",
+                "(^|_)sambuca($|_)",
+                "(^|_)pernod($|_)",
+                "(^|_)ouzo($|_)",
+                "(^|_)anisette($|_)",
+                "(^|_)galliano($|_)"
+            ]
+        },
+        {
+            "id": "coffee_liqueur",
+            "label": "Coffee Liqueur",
+            "includes": [
+                "coffee_liqueur",
+                "kahlua",
+                "tia_maria"
+            ]
+        },
+        {
+            "id": "hazelnut_liqueur",
+            "label": "Hazelnut Liqueur",
+            "includes": [
+                "(^|_)frangelico($|_)"
+            ]
+        },
+        {
+            "id": "rectified_spirit",
+            "label": "Rectified Spirit",
+            "includes": [
+                "everclear"
+            ]
+        },
+        {
+            "id": "club_soda",
+            "label": "Club Soda",
+            "includes": [
+                "club_soda"
+            ]
+        },
+        {
+            "id": "carbonated_water",
+            "label": "Carbonated Water",
+            "includes": [
+                "carbonated_water",
+                "soda_water"
+            ]
+        },
+        {
+            "id": "tonic_water",
+            "label": "Tonic Water",
+            "includes": [
+                "tonic_water"
+            ]
+        },
+        {
+            "id": "coffee",
+            "label": "Coffee",
+            "includes": [
+                "(^|_)coffee($|_)",
+                "(^|_)espresso($|_)"
+            ]
+        },
+        {
+            "id": "cherry_liqueur",
+            "label": "Cherry Liqueur",
+            "includes": [
+                "(^|_)cherry_liqueur($|_)",
+                "cherry_sangue_morlacco",
+                "(^|_)luxardo($|_)"
+            ]
+        },
+        {
+            "id": "cherry",
+            "label": "Cherry",
+            "includes": [
+                "(^|_)cherry($|_)"
+            ]
+        },
+        {
+            "id": "vanilla",
+            "label": "Vanilla",
+            "includes": [
+                "(^|_)vanilla($|_)",
+                "irish_cream"
+            ]
+        },
+        {
+            "id": "wormwood",
+            "label": "Wormwood",
+            "includes": [
+                "(^|_)wormwood($|_)"
+            ]
+        },
+        {
+            "id": "tabasco",
+            "label": "Tabasco",
+            "includes": [
+                "(^|_)tabasco($|_)"
+            ]
+        },
+        {
+            "id": "blackberry_liqueur",
+            "label": "Blackberry Liqueur",
+            "includes": [
+                "(^|_)blackberry_liqueur($|_)",
+                "creme_de_mure"
+            ]
+        },
+        {
+            "id": "grapefruit",
+            "label": "Grapefruit",
+            "includes": [
+                "(^|_)grapefruit($|_)",
+                "donns_mix"
+            ]
+        },
+        {
+            "id": "agave",
+            "label": "Agave",
+            "includes": [
+                "(^|_)agave($|_)",
+                "(^|_)espadin_mezcal($|_)"
+            ]
+        },
+        {
+            "id": "pepper",
+            "label": "Pepper",
+            "includes": [
+                "(^|_)pepper($|_)"
+            ]
+        },
+        {
+            "id": "ginger_beer",
+            "label": "Ginger Beer",
+            "includes": [
+                "(^|_)ginger_beer($|_)"
+            ]
+        },
+        {
+            "id": "ginger_ale",
+            "label": "Ginger Ale",
+            "includes": [
+                "(^|_)ginger_ale($|_)"
+            ]
+        },
+        {
+            "id": "ginger",
+            "label": "Ginger",
+            "includes": [
+                "(^|_)ginger($|_)",
+                "(^|_)gengibre($|_)"
+            ]
+        },
+        {
+            "id": "raspberry",
+            "label": "Raspberry",
+            "includes": [
+                "(^|_)raspberry($|_)"
+            ]
+        },
+        {
+            "id": "coconut_liqueur",
+            "label": "Coconut Liqueur",
+            "includes": [
+                "(^|_)coconut_liqueur($|_)"
+            ]
+        },
+        {
+            "id": "beer",
+            "label": "Beer",
+            "includes": [
+                "beer",
+                "lager",
+                "(^|_)guinness($|_)",
+                "(^|_)corona($|_)"
+            ]
+        },
+        {
+            "id": "tomato",
+            "label": "Tomato",
+            "includes": [
+                "(^|_)tomato($|_)"
+            ]
+        },
+        {
+            "id": "worcestershire_sauce",
+            "label": "Worcestershire Sauce",
+            "includes": [
+                "(^|_)worcestershire_sauce($|_)"
+            ]
+        },
+        {
+            "id": "salt",
+            "label": "Salt",
+            "includes": [
+                "(^|_)salt($|_)"
+            ]
+        },
+        {
+            "id": "celery",
+            "label": "Celery",
+            "includes": [
+                "(^|_)celery($|_)"
+            ]
+        },
+        {
+            "id": "kummel",
+            "label": "Kummel",
+            "includes": [
+                "(^|_)kummel($|_)"
+            ]
+        },
+        {
+            "id": "rum_liqueur",
+            "label": "Rum Liqueur",
+            "includes": [
+                "(^|_)rum_liqueur($|_)",
+                "falernum"
+            ]
+        },
+        {
+            "id": "cinnamon",
+            "label": "Cinnamon",
+            "includes": [
+                "(^|_)cinnamon($|_)",
+                "donns_mix"
+            ]
+        },
+        {
+            "id": "cinnamon_liqueur",
+            "label": "Cinnamon Liqueur",
+            "includes": [
+                "(^|_)cinnamon_liqueur($|_)",
+                "(^|_)cinnamon_schnapps($|_)"
+            ]
+        },
+        {
+            "id": "donns_mix",
+            "label": "Donn's Mix",
+            "includes": [
+                "donns_mix"
+            ]
+        },
+        {
+            "id": "soda",
+            "label": "Soda",
+            "includes": [
+                "(^|_)soda($|_)",
+                "(^|_)cola($|_)",
+                "(^|_)mountain_dew($|_)",
+                "(^|_)sprite($|_)",
+                "(^|_)7_up($|_)",
+                "(^|_)schweppes_russchian($|_)",
+                "(^|_)dr_pepper($|_)"
+            ]
+        },
+        {
+            "id": "cola",
+            "label": "Cola",
+            "includes": [
+                "(^|_)cola($|_)",
+                "(^|_)dr_pepper($|_)"
+            ]
+        },
+        {
+            "id": "orgeat",
+            "label": "Orgeat",
+            "includes": [
+                "(^|_)orgeat($|_)"
+            ]
+        },
+        {
+            "id": "mint_liqueur",
+            "label": "Mint Liqueur",
+            "includes": [
+                "(^|_)mint_liqueur($|_)",
+                "(^|_)creme_de_menthe($|_)"
+            ]
+        },
+        {
+            "id": "milk",
+            "label": "Milk",
+            "includes": [
+                "(^|_)milk($|_)",
+                "half_and_half"
+            ]
+        },
+        {
+            "id": "nutmeg",
+            "label": "Nutmeg",
+            "includes": [
+                "(^|_)nutmeg($|_)"
+            ]
+        },
+        {
+            "id": "chocolate",
+            "label": "Chocolate",
+            "includes": [
+                "(^|_)chocolate($|_)"
+            ]
+        },
+        {
+            "id": "elderflower_cordial",
+            "label": "Elderflower Cordial",
+            "includes": [
+                "(^|_)elderflower_cordial($|_)"
+            ]
+        },
+        {
+            "id": "honey",
+            "label": "Honey",
+            "includes": [
+                "(^|_)honey($|_)"
+            ]
+        },
+        {
+            "id": "angelica_root",
+            "label": "Angelica Root",
+            "includes": [
+                "(^|_)angelica_root($|_)"
+            ]
+        },
+        {
+            "id": "fennel_seeds",
+            "label": "Fennel Seeds",
+            "includes": [
+                "(^|_)fennel_seeds($|_)"
+            ]
+        },
+        {
+            "id": "cider",
+            "label": "Cider",
+            "includes": [
+                "(^|_)cider($|_)"
+            ]
+        },
+        {
+            "id": "jello",
+            "label": "Jello",
+            "includes": [
+                "(^|_)jello($|_)"
+            ]
+        },
+        {
+            "id": "guava",
+            "label": "Guava",
+            "includes": [
+                "(^|_)guava($|_)"
+            ]
+        },
+        {
+            "id": "tea",
+            "label": "Tea",
+            "includes": [
+                "(^|_)tea($|_)",
+                "(^|_)chamomile($|_)"
+            ]
+        },
+        {
+            "id": "cloves",
+            "label": "Cloves",
+            "includes": [
+                "(^|_)cloves($|_)"
+            ]
+        },
+        {
+            "id": "olive",
+            "label": "Olive",
+            "includes": [
+                "(^|_)olive($|_)"
+            ]
+        },
+        {
+            "id": "melon_liqueur",
+            "label": "Melon Liqueur",
+            "includes": [
+                "(^|_)melon_liqueur($|_)"
+            ]
+        },
+        {
+            "id": "apricot_nectar",
+            "label": "Apricot Nectar",
+            "includes": [
+                "(^|_)apricot_nectar($|_)"
+            ]
+        },
+        {
+            "id": "pomegranate",
+            "label": "Pomegranate",
+            "includes": [
+                "(^|_)pomegranate($|_)"
+            ]
+        },
+        {
+            "id": "passion_fruit_liqueur",
+            "label": "Passion Fruit Liqueur",
+            "includes": [
+                "(^|_)passion_fruit_liqueur($|_)",
+                "passoa"
+            ]
+        },
+        {
+            "id": "passion_fruit",
+            "label": "Passion Fruit",
+            "includes": [
+                "(^|_)passion_fruit($|_)"
+            ]
+        },
+        {
+            "id": "strawberry",
+            "label": "Strawberry",
+            "includes": [
+                "(^|_)strawberry($|_)",
+                "(^|_)strawberries($|_)"
+            ]
+        },
+        {
+            "id": "maple_syrup",
+            "label": "Maple Syrup",
+            "includes": [
+                "(^|_)maple_syrup($|_)"
+            ]
+        },
+        {
+            "id": "kool_aid",
+            "label": "Kool-Aid",
+            "includes": [
+                "(^|_)kool_aid($|_)"
+            ]
+        },
+        {
+            "id": "campari",
+            "label": "Campari",
+            "includes": [
+                "(^|_)campari($|_)"
+            ]
+        },
+        {
+            "id": "anise",
+            "label": "Anise",
+            "includes": [
+                "(^|_)anise($|_)",
+                "anis"
+            ]
+        },
+        {
+            "id": "licorice",
+            "label": "Licorice",
+            "includes": [
+                "(^|_)licorice($|_)"
+            ]
+        },
+        {
+            "id": "raisin",
+            "label": "Raisin",
+            "includes": [
+                "(^|_)raisins?($|_)"
+            ]
+        },
+        {
+            "id": "blueberry",
+            "label": "Blueberry",
+            "includes": [
+                "(^|_)blueberry($|_)",
+                "(^|_)blueberries($|_)"
+            ]
+        },
+        {
+            "id": "coconut",
+            "label": "Coconut",
+            "includes": [
+                "(^|_)coconut($|_)"
+            ]
+        },
+        {
+            "id": "fig",
+            "label": "Fig",
+            "includes": [
+                "(^|_)figs?($|_)"
+            ]
+        },
+        {
+            "id": "thyme",
+            "label": "Thyme",
+            "includes": [
+                "(^|_)thyme($|_)"
+            ]
+        },
+        {
+            "id": "rosemary",
+            "label": "Rosemary",
+            "includes": [
+                "(^|_)rosemary($|_)"
+            ]
+        },
+        {
+            "id": "cucumber",
+            "label": "Cucumber",
+            "includes": [
+                "(^|_)cucumber($|_)"
+            ]
+        },
+        {
+            "id": "banana",
+            "label": "Banana",
+            "includes": [
+                "(^|_)banana($|_)"
+            ]
+        },
+        {
+            "id": "apple",
+            "label": "Apple",
+            "includes": [
+                "(^|_)apple($|_)"
+            ]
+        },
+        {
+            "id": "apple_liqueur",
+            "label": "Apple Liqueur",
+            "includes": [
+                "(^|_)apple_liqueur($|_)",
+                "(^|_)apple_schnapps($|_)"
+            ]
+        },
+        {
+            "id": "ice_cream",
+            "label": "Ice Cream",
+            "includes": [
+                "(^|_)ice_cream($|_)"
+            ]
+        },
+        {
+            "id": "rose",
+            "label": "Rose",
+            "includes": [
+                "(^|_)roses($|_)"
+            ]
+        },
+        {
+            "id": "cookie",
+            "label": "Cookie",
+            "includes": [
+                "(^|_)cookie($|_)",
+                "(^|_)cookies($|_)"
+            ]
+        },
+        {
+            "id": "kiwi",
+            "label": "Kiwi",
+            "includes": [
+                "(^|_)kiwi($|_)"
+            ]
+        },
+        {
+            "id": "violet_flower_liqueur",
+            "label": "Violet Flower Liqueur",
+            "includes": [
+                "(^|_)violet_flower_liqueur($|_)",
+                "creme_de_violette"
+            ]
+        },
+        {
+            "id": "grape",
+            "label": "Grape",
+            "includes": [
+                "(^|_)grapes?($|_)"
+            ]
+        },
+        {
+            "id": "basil",
+            "label": "Basil",
+            "includes": [
+                "(^|_)basil($|_)"
+            ]
+        },
+        {
+            "id": "grappa",
+            "label": "Grappa",
+            "includes": [
+                "(^|_)grappa($|_)"
+            ]
+        },
+        {
+            "id": "cachaca",
+            "label": "Cachaca",
+            "includes": [
+                "(^|_)cachaca($|_)"
+            ]
+        },
+        {
+            "id": "cardamom",
+            "label": "Cardamom",
+            "includes": [
+                "(^|_)cardamom($|_)"
+            ]
+        }
+    ]
+}
