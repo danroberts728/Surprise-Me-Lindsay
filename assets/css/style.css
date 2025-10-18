@@ -95,3 +95,60 @@ h5 {margin:12px 0 6px; font-weight: bold; color: var(--fg);}
 
 /* Prevent page scroll while open */
 body.modal-open { overflow: hidden; }
+
+/* === Base Liquor compact pills === */
+.input-block--base { margin: 10px 0 12px; }
+
+#base-liquor-help { color: var(--muted); font-size: 12px; margin: 4px 0 8px; }
+
+/* Row that wraps horizontally */
+.check-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Each checkbox = a compact pill */
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--chip);
+  border: 1px solid var(--line);
+  font-size: 13px;
+  line-height: 1;
+  user-select: none;
+  cursor: pointer;
+}
+
+/* Make the native checkbox small and tidy */
+.check input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  accent-color: var(--accent);   /* modern browsers */
+}
+
+/* Subtle “selected” state */
+.check input[type="checkbox"]:checked + span {
+  color: var(--fg);
+  font-weight: 600;
+  letter-spacing: .1px;
+  text-shadow: 0 0 0 currentColor; /* crisp text on dark bg */
+  background: none;
+}
+
+/* Slight highlight ring when selected */
+.check input[type="checkbox"]:checked {
+  outline: 2px solid rgba(74, 222, 128, .35);
+  outline-offset: 1px;
+  border-radius: 3px;
+}
+
+/* Keep it tight on very small screens */
+@media (max-width: 420px) {
+  .check { padding: 6px 8px; font-size: 12.5px; }
+  .check-row { gap: 6px; }
+}

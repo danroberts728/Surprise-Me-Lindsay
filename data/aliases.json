@@ -1044,7 +1044,6 @@
       "id": "cachaca",
       "name": "Cachaça",
       "responds_to": [
-        "cachaça",
         "cachaca"
       ]
     },
